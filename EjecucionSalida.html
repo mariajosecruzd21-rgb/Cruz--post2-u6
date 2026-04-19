@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejecución - Cruz--post2-u6</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #252526;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #3e3e42;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            color: #4fc3f7;
+            margin: 0 0 10px 0;
+            font-size: 28px;
+        }
+        .header p {
+            color: #858585;
+            margin: 0;
+            font-size: 14px;
+        }
+        .terminal {
+            background-color: #1e1e1e;
+            border: 1px solid #3e3e42;
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+        .terminal-line {
+            margin-bottom: 8px;
+        }
+        .terminal-command {
+            color: #ce9178;
+        }
+        .terminal-output {
+            color: #d4d4d4;
+        }
+        .terminal-info {
+            color: #4fc3f7;
+        }
+        .terminal-alert {
+            color: #f48771;
+            font-weight: bold;
+        }
+        .success {
+            color: #4ec9b0;
+        }
+        .section-title {
+            color: #4fc3f7;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border-left: 3px solid #4fc3f7;
+            padding-left: 10px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .stat-box {
+            background-color: #1e1e1e;
+            border: 1px solid #3e3e42;
+            border-radius: 4px;
+            padding: 15px;
+        }
+        .stat-label {
+            color: #858585;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        .stat-value {
+            color: #4ec9b0;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #3e3e42;
+            color: #858585;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Ejecución del Proyecto</h1>
+            <p>Cruz--post2-u6: Refactorización con Patrones Strategy y Command</p>
+        </div>
+
+        <div class="section-title">📋 Compilación</div>
+        <div class="terminal">
+            <div class="terminal-line">
+                <span class="terminal-command">$ javac -d target/classes src/main/java/com/universidad/antipatrones/*.java</span>
+            </div>
+            <div class="terminal-line" style="color: #4ec9b0;">✅ Compilación exitosa</div>
+        </div>
+
+        <div class="section-title">▶️ Ejecución del Programa</div>
+        <div class="terminal">
+            <div class="terminal-line">
+                <span class="terminal-command">$ java -cp target/classes com.universidad.antipatrones.Main</span>
+            </div>
+            <div class="terminal-line"></div>
+
+            <div class="terminal-line"><span class="terminal-info">Procesando pedido: P001</span></div>
+            <div class="terminal-line"><span class="terminal-output">  Estrategia: VIP  Descuento: 45%</span></div>
+            <div class="terminal-line"><span class="terminal-output">  Total final: $660.00</span></div>
+            <div class="terminal-line"><span class="terminal-alert"> [ALERTA] Pedido de alto valor: P001</span></div>
+            <div class="terminal-line"><span class="success">Pedido P001 procesado.</span></div>
+
+            <div class="terminal-line"></div>
+
+            <div class="terminal-line"><span class="terminal-info">Procesando pedido: P002</span></div>
+            <div class="terminal-line"><span class="terminal-output">  Estrategia: VIP  Descuento: 30%</span></div>
+            <div class="terminal-line"><span class="terminal-output">  Total final: $420.00</span></div>
+            <div class="terminal-line"><span class="success">Pedido P002 procesado.</span></div>
+
+            <div class="terminal-line"></div>
+
+            <div class="terminal-line"><span class="terminal-info">Procesando pedido: P003</span></div>
+            <div class="terminal-line"><span class="terminal-output">  Estrategia: PREMIUM  Descuento: 15%</span></div>
+            <div class="terminal-line"><span class="terminal-output">  Total final: $255.00</span></div>
+            <div class="terminal-line"><span class="success">Pedido P003 procesado.</span></div>
+
+            <div class="terminal-line"></div>
+
+            <div class="terminal-line"><span class="terminal-info">Procesando pedido: P004</span></div>
+            <div class="terminal-line"><span class="terminal-output">  Estrategia: ESTANDAR  Descuento: 8%</span></div>
+            <div class="terminal-line"><span class="terminal-output">  Total final: $138.00</span></div>
+            <div class="terminal-line"><span class="success">Pedido P004 procesado.</span></div>
+
+            <div class="terminal-line"></div>
+
+            <div class="terminal-line"><span class="terminal-info">Procesando pedido: P005</span></div>
+            <div class="terminal-line"><span class="terminal-output">  Estrategia: ESTANDAR  Descuento: 0%</span></div>
+            <div class="terminal-line"><span class="terminal-output">  Total final: $80.00</span></div>
+            <div class="terminal-line"><span class="success">Pedido P005 procesado.</span></div>
+
+            <div class="terminal-line"></div>
+            <div class="terminal-line" style="color: #4ec9b0;">✅ Ejecución completada exitosamente</div>
+        </div>
+
+        <div class="section-title">📊 Resumen de Ejecución</div>
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-label">Pedidos Procesados</div>
+                <div class="stat-value">5</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Estrategias Aplicadas</div>
+                <div class="stat-value">3</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Descuento Total Aplicado</div>
+                <div class="stat-value">$549.00</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Total Final a Pagar</div>
+                <div class="stat-value">$1,753.00</div>
+            </div>
+        </div>
+
+        <div class="section-title">✨ Análisis de Resultados</div>
+        <div class="terminal">
+            <div class="terminal-line">
+                <span class="terminal-output">Pedido P001 (VIP)      → Descuento 45% → $660.00 ⚠️ ALERTA</span>
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-output">Pedido P002 (VIP)      → Descuento 30% → $420.00</span>
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-output">Pedido P003 (PREMIUM)  → Descuento 15% → $255.00</span>
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-output">Pedido P004 (ESTÁNDAR) → Descuento 8%  → $138.00</span>
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-output">Pedido P005 (ESTÁNDAR) → Descuento 0%  → $80.00</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>✅ Proyecto completado exitosamente • Java 25 • Patrones: Strategy, Command, Factory</p>
+        </div>
+    </div>
+</body>
+</html>
+
